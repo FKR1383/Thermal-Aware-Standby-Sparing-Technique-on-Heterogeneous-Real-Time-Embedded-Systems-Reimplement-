@@ -1,5 +1,7 @@
 import random
 from task import Task
+import networkx as nx
+import matplotlib.pyplot as plt
 
 class DAG:
     def __init__(self, n, h, task_set):
@@ -79,3 +81,32 @@ class DAG:
             parent_ids = [parent.id for parent in task.parents]
             output += f"Task ID {task.id} ({task.task_name}) in level {task.level} -> Children: {children_ids}, Parents: {parent_ids}\n"
         return output
+    
+
+
+    def draw_dag(self):
+        G = nx.DiGraph()
+
+        pos = {} 
+        labels = {} 
+
+        
+        for level_index, level in enumerate(self.levels):
+            for node_index, task in enumerate(level):
+                G.add_node(task.id)
+                pos[task.id] = (node_index, -level_index)  
+                labels[task.id] = f"{task.task_name}\n{task.id}"
+
+        
+        for task in self.tasks:
+            for child in task.children:
+                G.add_edge(task.id, child.id)
+
+        plt.figure(figsize=(12, 6))
+        nx.draw(G, pos, with_labels=True, labels=labels, node_size=1500,
+                node_color='lightblue', arrows=True, arrowsize=20, font_size=10)
+
+        plt.title("DAG Visualization")
+        plt.axis('off')
+        plt.tight_layout()
+        plt.show()

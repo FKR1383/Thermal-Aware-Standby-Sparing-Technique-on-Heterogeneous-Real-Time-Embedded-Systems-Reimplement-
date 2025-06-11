@@ -9,6 +9,8 @@ def run(n, h):
 
     print(dag)
 
+    dag.draw_dag()
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
