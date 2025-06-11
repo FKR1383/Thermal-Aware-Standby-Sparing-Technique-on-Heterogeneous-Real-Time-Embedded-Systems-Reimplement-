@@ -1,15 +1,33 @@
 import random
+import math
 from task import Task
 import networkx as nx
 import matplotlib.pyplot as plt
 
 class DAG:
-    def __init__(self, n, h, task_set):
+    def __init__(self, n, parallelism_mode, task_set):
         self.n = n
-        self.h = h
+        self.parallelism_mode = parallelism_mode
+        self.h = self.get_h_range_for_parallelism_mode()
         self.task_set = task_set
         self.tasks = []
         self.levels = []
+
+    def get_h_range_for_parallelism_mode(self):
+        if self.parallelism_mode == "high":
+            start = 1
+            end = math.ceil(self.n / 3) - 1
+            return random.randint(start, end)
+        
+        elif self.parallelism_mode == "medium":
+            start = math.ceil(self.n / 3)    
+            end = math.ceil(2*self.n / 3) - 1
+            return random.randint(start, end)
+        
+        elif self.parallelism_mode == "low":
+            start = math.ceil(2 * self.n / 3)  
+            end = self.n - 1                   
+            return random.randint(start, end)
 
     def get_parallelism_type(self):
         if 1 <= self.h < self.n/3:
