@@ -1,4 +1,5 @@
 import random
+import json
 import math
 from task import Task
 import networkx as nx
@@ -127,3 +128,38 @@ class DAG:
         plt.axis('off')
         plt.tight_layout()
         plt.show()
+        
+
+    def to_dict(self):
+        return {
+            "n": self.n,
+            "parallelism_mode": self.parallelism_mode,
+            "h": self.h,
+            "task_set": self.task_set,
+            "tasks": [task.to_dict() for task in self.tasks]
+        }
+
+    def to_json(self):
+        return json.dumps(self.to_dict(), indent=2)
+
+    @staticmethod
+    def from_json(json_str):
+        data = json.loads(json_str)
+        dag = DAG(data["n"], data["parallelism_mode"], data["task_set"])
+        dag.h = data["h"]
+
+        task_map = {}
+        dag.tasks = [Task.from_dict(t, task_map) for t in data["tasks"]]
+
+        for t_data in data["tasks"]:
+            task = task_map[t_data["id"]]
+            task.parents = [task_map[pid] for pid in t_data["parents"]]
+            task.children = [task_map[cid] for cid in t_data["children"]]
+
+        dag.levels = []
+        max_level = max(task.level for task in dag.tasks)
+        for level_num in range(max_level + 1):
+            level_tasks = [t for t in dag.tasks if t.level == level_num]
+            dag.levels.append(level_tasks)
+
+        return dag

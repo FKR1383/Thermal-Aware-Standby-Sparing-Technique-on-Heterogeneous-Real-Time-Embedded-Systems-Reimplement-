@@ -11,6 +11,16 @@ def run(n, parallelism_mode, show_task_names):
 
     dag.draw_dag(show_task_names)
 
+    print('------------------------------------------')
+
+    print('DO YOU WANT TO SAVE THIS DAG INTO JSON FILE? (y/n)')
+
+    answer = input()
+    if answer == 'y':
+        json_data = dag.to_json()
+        with open("output/dag.json", "w") as f:
+            f.write(json_data)
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 4:
