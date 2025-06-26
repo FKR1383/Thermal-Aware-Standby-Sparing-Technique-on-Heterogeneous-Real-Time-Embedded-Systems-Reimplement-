@@ -1,9 +1,10 @@
 import sys
-from dag_creator.DAG import DAG
-from dag_creator.task import Task
-from scheduling.system import System
-from scheduling.core import Core
-from scheduling.TASS import TASS_algorithm
+
+from codes.dag_creator.DAG import DAG
+from codes.dag_creator.task import Task
+from codes.scheduler.system import System
+from codes.scheduler.core import Core
+from codes.scheduler.TASS import TASS_algorithm
 
 def run(task_dag_file, k):
     with open(task_dag_file, "r") as f:
@@ -11,7 +12,11 @@ def run(task_dag_file, k):
 
     dag = DAG.from_json(json_str)
     system = System(dag, k)
-    TASS_algorithm(system=system, dag=dag)
+    result = TASS_algorithm(system=system, dag=dag)
+    if result:
+        print("Scheduling Done!")
+    else:
+        print("Tasks are unschedulable!")
 
 
     

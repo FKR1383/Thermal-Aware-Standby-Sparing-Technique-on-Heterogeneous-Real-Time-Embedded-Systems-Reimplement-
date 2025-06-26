@@ -1,4 +1,4 @@
-from DAG import DAG
+from codes.dag_creator.DAG import DAG
 import sys
 
 def run(n, parallelism_mode, show_task_names):
