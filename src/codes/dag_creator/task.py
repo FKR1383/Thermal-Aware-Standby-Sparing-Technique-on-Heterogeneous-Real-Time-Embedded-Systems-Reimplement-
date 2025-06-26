@@ -8,8 +8,8 @@ class Task:
         self.deadline = None # we will set this (I don't know how :) ) -- one value
         self.wcet_LO = None # assigned automatically according to the task name -- per voltage/frequency value
         self.wcet_HI = None # assigned automatically according to the task name -- per voltage/frequency value
-        self.power_value = None # assigned automatically according to the task name -- per voltage/frequency value
-        # TODO: other arguments will be added. (such as wcet, power comsumption, etc.)
+        self.peak_power_value_LO = None # assigned automatically according to the task name -- per voltage/frequency value
+        self.peak_power_value_HI = None # assigned automatically according to the task name -- per voltage/frequency value
     
     def __str__(self):
         return f"Task {self.task_name}"
@@ -29,7 +29,8 @@ class Task:
             "deadline": self.deadline,
             "wcet_LO": self.wcet_LO,
             "wcet_HI": self.wcet_HI,
-            "power_value": self.power_value,
+            "peak_power_value_LO": self.peak_power_value_LO,
+            "peak_power_value_HI": self.peak_power_value_HI,
             "parents": [p.id for p in self.parents],
             "children": [c.id for c in self.children]
         }
@@ -41,6 +42,7 @@ class Task:
         task.deadline = data["deadline"]
         task.wcet_LO = data["wcet_LO"]
         task.wcet_HI = data["wcet_HI"]
-        task.power_value = data["power_value"]
+        task.peak_power_value_LO = data["peak_power_value_LO"]
+        task.peak_power_value_HI = data["peak_power_value_HI"]
         task_map[task.id] = task
         return task

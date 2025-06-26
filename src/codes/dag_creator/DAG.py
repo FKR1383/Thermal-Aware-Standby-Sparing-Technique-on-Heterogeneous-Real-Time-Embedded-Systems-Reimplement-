@@ -62,7 +62,7 @@ class DAG:
         levels = [[None] * count for count in parts]
         self.levels = levels
 
-        task_id = 0
+        task_id = 1
         for level in range(self.h):
             for i in range(len(self.levels[level])):
                 task = Task(task_id, task_names[task_id])
