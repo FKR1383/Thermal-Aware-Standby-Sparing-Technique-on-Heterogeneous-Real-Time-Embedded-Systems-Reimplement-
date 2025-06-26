@@ -5,8 +5,8 @@ from codes.scheduler.core import Core
 class System:
     def __init__(self, DAG, k):
         self.DAG = DAG
-        self.TSP_LO = {} # TSP for all possible number of active cores in 'Low Power Island'
-        self.TSP_HI = {} # TSP for all possible number of active cores in 'High Power Island'
+        self.TSP_LO = {0: None, 1: 3, 2: 1} # TSP for all possible number of active cores in 'Low Power Island'
+        self.TSP_HI = {0: None, 1: 5, 2: 3} # TSP for all possible number of active cores in 'High Power Island'
         self.core_pairs = [(Core('HI'), Core('LO')) for _ in range(k)]
 
     def get_best_core_pair(self):
@@ -34,7 +34,8 @@ class System:
             tsp_constraint = self.TSP_HI[active_cores]
         else:
             tsp_constraint = self.TSP_LO[active_cores]
-        if tsp_constraint >= peak_power:
+            
+        if tsp_constraint == None or tsp_constraint >= peak_power:
             return True
         return False
     

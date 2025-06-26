@@ -21,10 +21,10 @@
       "task_name": "Patricia",
       "level": 0,
       "deadline": 35,
-      "wcet_LO": 4,
-      "wcet_HI": 9,
-      "peak_power_value_LO": null,
-      "peak_power_value_HI": null,
+      "wcet_LO": 9,
+      "wcet_HI": 4,
+      "peak_power_value_LO": 1,
+      "peak_power_value_HI": 2,
       "parents": [],
       "children": [
         3,
@@ -36,10 +36,10 @@
       "task_name": "Qsort",
       "level": 0,
       "deadline": 40,
-      "wcet_LO": 15,
-      "wcet_HI": 20,
-      "peak_power_value_LO": null,
-      "peak_power_value_HI": null,
+      "wcet_LO": 20,
+      "wcet_HI": 15,
+      "peak_power_value_LO": 2,
+      "peak_power_value_HI": 3,
       "parents": [],
       "children": [
         4,
@@ -51,12 +51,13 @@
       "task_name": "Bitcount",
       "level": 1,
       "deadline": 65,
-      "wcet_LO": 7,
-      "wcet_HI": 12,
-      "peak_power_value_LO": null,
-      "peak_power_value_HI": null,
+      "wcet_LO": 12,
+      "wcet_HI": 7,
+      "peak_power_value_LO": 1,
+      "peak_power_value_HI": 2,
       "parents": [
-        1
+        1,
+        2
       ],
       "children": [
         8
@@ -67,10 +68,10 @@
       "task_name": "SHA",
       "level": 1,
       "deadline": 60,
-      "wcet_LO": 10,
-      "wcet_HI": 15,
-      "peak_power_value_LO": null,
-      "peak_power_value_HI": null,
+      "wcet_LO": 15,
+      "wcet_HI": 10,
+      "peak_power_value_LO": 1,
+      "peak_power_value_HI": 2,
       "parents": [
         1,
         2
@@ -84,10 +85,10 @@
       "task_name": "Bitcount",
       "level": 1,
       "deadline": 70,
-      "wcet_LO": 5,
-      "wcet_HI": 10,
-      "peak_power_value_LO": null,
-      "peak_power_value_HI": null,
+      "wcet_LO": 10,
+      "wcet_HI": 5,
+      "peak_power_value_LO": 3,
+      "peak_power_value_HI": 4,
       "parents": [
         2
       ],
@@ -101,10 +102,10 @@
       "task_name": "Basicmath",
       "level": 2,
       "deadline": 121,
-      "wcet_LO": 21,
-      "wcet_HI": 26,
-      "peak_power_value_LO": null,
-      "peak_power_value_HI": null,
+      "wcet_LO": 26,
+      "wcet_HI": 21,
+      "peak_power_value_LO": 1,
+      "peak_power_value_HI": 2,
       "parents": [
         4,
         5
@@ -118,10 +119,10 @@
       "task_name": "String search",
       "level": 2,
       "deadline": 100,
-      "wcet_LO": 8,
-      "wcet_HI": 13,
-      "peak_power_value_LO": null,
-      "peak_power_value_HI": null,
+      "wcet_LO": 13,
+      "wcet_HI": 8,
+      "peak_power_value_LO": 2,
+      "peak_power_value_HI": 3,
       "parents": [
         5
       ],
@@ -134,10 +135,10 @@
       "task_name": "Bitcount",
       "level": 3,
       "deadline": 155,
-      "wcet_LO": 15,
-      "wcet_HI": 20,
-      "peak_power_value_LO": null,
-      "peak_power_value_HI": null,
+      "wcet_LO": 20,
+      "wcet_HI": 15,
+      "peak_power_value_LO": 1,
+      "peak_power_value_HI": 2,
       "parents": [
         3,
         6
@@ -149,10 +150,10 @@
       "task_name": "FFT",
       "level": 3,
       "deadline": 130,
-      "wcet_LO": 6,
-      "wcet_HI": 11,
-      "peak_power_value_LO": null,
-      "peak_power_value_HI": null,
+      "wcet_LO": 11,
+      "wcet_HI": 6,
+      "peak_power_value_LO": 1,
+      "peak_power_value_HI": 2,
       "parents": [
         7
       ],
