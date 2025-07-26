@@ -27,8 +27,8 @@
     <param name="virtual_address_width" value="32"/>
     <param name="physical_address_width" value="32"/>
     <param name="virtual_memory_page_size" value="4096"/>
-    <stat name="total_cycles" value="80504"/>
-    <stat name="idle_cycles" value="80504"/>
+    <stat name="total_cycles" value="19305936"/>
+    <stat name="idle_cycles" value="19305936"/>
     <stat name="busy_cycles" value="0"/>
     <component id="system.core0" name="core0">
       <param name="clock_rate" value="2000"/>
@@ -70,37 +70,37 @@
       <param name="load_buffer_size" value="0"/>
       <param name="memory_ports" value="1"/>
       <param name="RAS_size" value="4"/>
-      <stat name="total_instructions" value="15429169"/>
-      <stat name="int_instructions" value="12284470"/>
+      <stat name="total_instructions" value="280579918"/>
+      <stat name="int_instructions" value="269862850"/>
       <stat name="fp_instructions" value="0"/>
-      <stat name="branch_instructions" value="3814189"/>
-      <stat name="branch_mispredictions" value="238255"/>
+      <stat name="branch_instructions" value="45257118"/>
+      <stat name="branch_mispredictions" value="6816228"/>
       <stat name="load_instructions" value="0"/>
       <stat name="store_instructions" value="0"/>
-      <stat name="committed_instructions" value="15429169"/>
-      <stat name="committed_int_instructions" value="12284470"/>
+      <stat name="committed_instructions" value="280579918"/>
+      <stat name="committed_int_instructions" value="269862850"/>
       <stat name="committed_fp_instructions" value="0"/>
       <stat name="pipeline_duty_cycle" value="1"/>
-      <stat name="rename_reads" value="30858338"/>
-      <stat name="rename_writes" value="15429169"/>
+      <stat name="rename_reads" value="561159836"/>
+      <stat name="rename_writes" value="280579918"/>
       <stat name="fp_rename_reads" value="0"/>
       <stat name="fp_rename_writes" value="0"/>
-      <stat name="inst_window_reads" value="15429169"/>
-      <stat name="inst_window_writes" value="15429169"/>
-      <stat name="inst_window_wakeup_accesses" value="30858338"/>
+      <stat name="inst_window_reads" value="280579918"/>
+      <stat name="inst_window_writes" value="280579918"/>
+      <stat name="inst_window_wakeup_accesses" value="561159836"/>
       <stat name="fp_inst_window_reads" value="0"/>
       <stat name="fp_inst_window_writes" value="0"/>
       <stat name="fp_inst_window_wakeup_accesses" value="0"/>
-      <stat name="int_regfile_reads" value="36853410"/>
-      <stat name="int_regfile_writes" value="12284470"/>
+      <stat name="int_regfile_reads" value="809588550"/>
+      <stat name="int_regfile_writes" value="269862850"/>
       <stat name="float_regfile_reads" value="0"/>
       <stat name="float_regfile_writes" value="0"/>
-      <stat name="ialu_accesses" value="12260026"/>
-      <stat name="mul_accesses" value="24444"/>
-      <stat name="fpu_accesses" value="0"/>
-      <stat name="cdb_alu_accesses" value="12260026"/>
-      <stat name="cdb_mul_accesses" value="24444"/>
-      <stat name="cdb_fpu_accesses" value="0"/>
+      <stat name="ialu_accesses" value="265930349"/>
+      <stat name="mul_accesses" value="3932501"/>
+      <stat name="fpu_accesses" value="146358"/>
+      <stat name="cdb_alu_accesses" value="265930349"/>
+      <stat name="cdb_mul_accesses" value="3932501"/>
+      <stat name="cdb_fpu_accesses" value="146358"/>
       <stat name="IFU_duty_cycle" value="0.9"/>
       <stat name="BR_duty_cycle" value="0.72"/>
       <stat name="LSU_duty_cycle" value="0.71"/>
@@ -135,24 +135,24 @@
       <component id="system.core0.icache" name="icache">
         <param name="icache_config" value="32768,64,2,1,10,10,32,0"/>
         <param name="buffer_sizes" value="2, 2, 8,0"/>
-        <stat name="read_accesses" value="7565621"/>
-        <stat name="read_misses" value="801"/>
+        <stat name="read_accesses" value="119228121"/>
+        <stat name="read_misses" value="1295981"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.core0.dcache" name="dcache">
         <param name="dcache_config" value="32768,64,2,1,10,10,32,1"/>
         <param name="buffer_sizes" value="6, 6, 16, 16"/>
-        <stat name="read_accesses" value="4040999"/>
-        <stat name="write_accesses" value="2609363"/>
-        <stat name="read_misses" value="416285"/>
-        <stat name="write_misses" value="56182"/>
+        <stat name="read_accesses" value="21798914"/>
+        <stat name="write_accesses" value="21506394"/>
+        <stat name="read_misses" value="41434"/>
+        <stat name="write_misses" value="4742"/>
         <stat name="conflicts" value="0"/>
       </component>
       <param name="number_of_BTB" value="1"/>
       <component id="system.core0.BTB" name="BTB">
         <param name="BTB_config" value="4096,4,1,2,1,1"/>
-        <stat name="read_accesses" value="4966510"/>
-        <stat name="write_accesses" value="84276"/>
+        <stat name="read_accesses" value="56130792"/>
+        <stat name="write_accesses" value="2247576"/>
       </component>
     </component>
     <component id="system.L1Directory0" name="L1Directory0">
@@ -162,10 +162,10 @@
       <param name="clockrate" value="2000"/>
       <param name="ports" value="1,1,1"/>
       <param name="device_type" value="2"/>
-      <stat name="read_accesses" value="6650362"/>
-      <stat name="write_accesses" value="2609363"/>
-      <stat name="read_misses" value="472467"/>
-      <stat name="write_misses" value="56182"/>
+      <stat name="read_accesses" value="43305308"/>
+      <stat name="write_accesses" value="21506394"/>
+      <stat name="read_misses" value="46176"/>
+      <stat name="write_misses" value="4742"/>
       <stat name="conflicts" value="20"/>
       <stat name="duty_cycle" value="0.1"/>
     </component>
@@ -176,10 +176,10 @@
       <param name="clockrate" value="3400"/>
       <param name="ports" value="1,1,1"/>
       <param name="device_type" value="0"/>
-      <stat name="read_accesses" value="144777"/>
-      <stat name="write_accesses" value="11173"/>
-      <stat name="read_misses" value="8920"/>
-      <stat name="write_misses" value="132600"/>
+      <stat name="read_accesses" value="1201333"/>
+      <stat name="write_accesses" value="1161302"/>
+      <stat name="read_misses" value="38342"/>
+      <stat name="write_misses" value="3273"/>
       <stat name="conflicts" value="100"/>
       <stat name="duty_cycle" value="0.1"/>
     </component>
@@ -189,10 +189,10 @@
       <param name="clockrate" value="3400"/>
       <param name="ports" value="1,1,1"/>
       <param name="device_type" value="0"/>
-      <stat name="read_accesses" value="144777"/>
-      <stat name="write_accesses" value="11173"/>
-      <stat name="read_misses" value="8920"/>
-      <stat name="write_misses" value="132600"/>
+      <stat name="read_accesses" value="1201333"/>
+      <stat name="write_accesses" value="1161302"/>
+      <stat name="read_misses" value="38342"/>
+      <stat name="write_misses" value="3273"/>
       <stat name="conflicts" value="0"/>
       <stat name="duty_cycle" value="1.0"/>
     </component>
@@ -209,8 +209,8 @@
       <param name="flit_bits" value="64"/>
       <param name="chip_coverage" value="1"/>
       <param name="link_routing_over_percentage" value="0.5"/>
-      <stat name="total_accesses" value="44480"/>
-      <stat name="duty_cycle" value="0.06"/>
+      <stat name="total_accesses" value="76744"/>
+      <stat name="duty_cycle" value="0.03"/>
     </component>
     <component id="system.mc" name="mc">
       <param name="type" value="1"/>
@@ -224,8 +224,8 @@
       <param name="IO_buffer_size_per_channel" value="32"/>
       <param name="databus_width" value="128"/>
       <param name="addressbus_width" value="51"/>
-      <stat name="memory_accesses" value="22240"/>
-      <stat name="memory_reads" value="22240"/>
+      <stat name="memory_accesses" value="38372"/>
+      <stat name="memory_reads" value="38372"/>
       <stat name="memory_writes" value="0"/>
     </component>
     <component id="system.niu" name="niu">

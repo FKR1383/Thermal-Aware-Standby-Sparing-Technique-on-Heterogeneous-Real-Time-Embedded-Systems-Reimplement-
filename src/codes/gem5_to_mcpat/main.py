@@ -96,12 +96,12 @@ def insert_branch_predictor(core_elem, config):
     cpu = config.get("system", {}).get("cpu", {})
     branch_pred = cpu.get("branchPred", {})
 
-    local_entries = branch_pred.get("localPredictorSize", 0)
-    local_bits = branch_pred.get("localCtrBits", 0)
-    global_entries = branch_pred.get("globalPredictorSize", 0)
-    global_bits = branch_pred.get("globalCtrBits", 0)
-    chooser_entries = branch_pred.get("choicePredictorSize", 0)
-    chooser_bits = branch_pred.get("choiceCtrBits", 0)
+    local_entries = branch_pred.get("localPredictorSize", 2048)
+    local_bits = branch_pred.get("localCtrBits", 2)
+    global_entries = branch_pred.get("globalPredictorSize", 8192)
+    global_bits = branch_pred.get("globalCtrBits", 2)
+    chooser_entries = branch_pred.get("choicePredictorSize", 1024)
+    chooser_bits = branch_pred.get("choiceCtrBits", 3)
 
     predictor_elem = ET.SubElement(core_elem, "component", id="system.core0.predictor", name="PBT")
     ET.SubElement(predictor_elem, "param", name="local_predictor_size", value=f"{local_entries},{local_bits}")
@@ -278,8 +278,8 @@ def add_L1_L2_directories(root_elem, stats):
                            name="L1Directory0")
 
     ET.SubElement(l1_dir, "param", name="Directory_type", value="0")
-    ET.SubElement(l1_dir, "param", name="Dir_config", value="2048,1,0,1, 4, 4, 8")
-    ET.SubElement(l1_dir, "param", name="buffer_sizes", value="8, 8, 8, 8")
+    ET.SubElement(l1_dir, "param", name="Dir_config", value="2048,1,0,1,4,4,8")
+    ET.SubElement(l1_dir, "param", name="buffer_sizes", value="8,8,8,8")
     ET.SubElement(l1_dir, "param", name="clockrate", value="2000")
     ET.SubElement(l1_dir, "param", name="ports", value="1,1,1")
     ET.SubElement(l1_dir, "param", name="device_type", value="2")
@@ -301,8 +301,8 @@ def add_L1_L2_directories(root_elem, stats):
                            name="L2Directory0")
 
     ET.SubElement(l2_dir, "param", name="Directory_type", value="1")
-    ET.SubElement(l2_dir, "param", name="Dir_config", value="1048576,16,16,1,2, 100")
-    ET.SubElement(l2_dir, "param", name="buffer_sizes", value="8, 8, 8, 8")
+    ET.SubElement(l2_dir, "param", name="Dir_config", value="1048576,16,16,1,2,100")
+    ET.SubElement(l2_dir, "param", name="buffer_sizes", value="8,8,8,8")
     ET.SubElement(l2_dir, "param", name="clockrate", value="3400")
     ET.SubElement(l2_dir, "param", name="ports", value="1,1,1")
     ET.SubElement(l2_dir, "param", name="device_type", value="0")
@@ -323,8 +323,8 @@ def add_L1_L2_directories(root_elem, stats):
                         id="system.L20",
                         name="L20")
 
-    ET.SubElement(l20, "param", name="L2_config", value="1048576,32, 8, 8, 8, 23, 32, 1")
-    ET.SubElement(l20, "param", name="buffer_sizes", value="16, 16, 16, 16")
+    ET.SubElement(l20, "param", name="L2_config", value="1048576,32,8,8,8,23,32,1")
+    ET.SubElement(l20, "param", name="buffer_sizes", value="16,16,16,16")
     ET.SubElement(l20, "param", name="clockrate", value="3400")
     ET.SubElement(l20, "param", name="ports", value="1,1,1")
     ET.SubElement(l20, "param", name="device_type", value="0")
@@ -501,8 +501,8 @@ def write_xml(tree, output_path):
     print(f"✅ XML saved to {output_path}")
 
 def main():
-    config = read_config("config.json")
-    stats = read_stats("stats.txt")
+    config = read_config("files/config.json")
+    stats = read_stats("files/stats.txt")
     print("🔧 Config & stats loaded.")
     tech_node = input("📥 Enter core technology node (nm): ").strip()
     clockrate = input("📥 Enter target core clockrate (MHz): ").strip()
