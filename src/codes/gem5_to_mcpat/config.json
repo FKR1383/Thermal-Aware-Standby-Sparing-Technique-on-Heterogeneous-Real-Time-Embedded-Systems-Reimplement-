@@ -1856,7 +1856,7 @@
                     "name": "workload",
                     "path": "system.cpu.workload",
                     "cmd": [
-                        "tests/test-progs/mibench-arm/FFT/fft"
+                        "tests/test-progs/mibench-arm/basicmath/basicmath_small"
                     ],
                     "cwd": "/home/farzam/Farzam/Sharif/Term6/Low_Power/Project/Project/programs/Gem5/gem5",
                     "drivers": [],
