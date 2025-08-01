@@ -15,7 +15,7 @@ def lambda_vi(voltage):
 def reliability(task_time, voltage):
     lam = lambda_vi(voltage)
     return math.exp(-lam * task_time)
-    return 0.5
+    #return 0.75
 
 
 def runtime_scheduling(system_restored):

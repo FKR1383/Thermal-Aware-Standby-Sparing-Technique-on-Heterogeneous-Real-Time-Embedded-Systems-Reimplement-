@@ -24,8 +24,8 @@ def run(n, parallelism_mode, show_task_names):
 
 if __name__ == "__main__":
     if len(sys.argv) != 4:
-        print("Usage: python main.py <n> <parallelism mode including 'high', 'medium' and 'low'> <show task names y/n>")
-        print("Example: python main.py 30 high n")
+        print("Usage: python DAG_creator.py <n> <parallelism mode including 'high', 'medium' and 'low'> <show task names y/n>")
+        print("Example: python DAG_creator.py 30 high n")
         sys.exit(1)
     
     n = int(sys.argv[1])

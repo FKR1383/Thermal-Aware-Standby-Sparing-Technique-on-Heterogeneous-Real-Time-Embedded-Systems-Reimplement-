@@ -40,6 +40,8 @@ def run(task_dag_file, k):
     
     
 if __name__ == "__main__":
+    print("Usage: python main.py [number of core pairs]")
+    print("Example: python main.py 2")
     k = int(sys.argv[1]) # number of core pairs
     TASK_DAG_FILE = 'inputs/dag.json'
     run(TASK_DAG_FILE, k)
