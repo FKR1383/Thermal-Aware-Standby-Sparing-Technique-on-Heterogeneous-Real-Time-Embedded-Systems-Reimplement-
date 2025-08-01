@@ -3,10 +3,10 @@ matplotlib.use('Agg')  # Use non-GUI backend
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 
-from codes.dag_creator.DAG import DAG
-from codes.dag_creator.task import Task
-from codes.scheduler.system import System
-from codes.scheduler.core import Core
+from codes.offline_simulator.dag_creator.DAG import DAG
+from codes.offline_simulator.dag_creator.task import Task
+from codes.offline_simulator.scheduler.system import System
+from codes.offline_simulator.scheduler.core import Core
 
 
 def TASS_algorithm(system, dag):

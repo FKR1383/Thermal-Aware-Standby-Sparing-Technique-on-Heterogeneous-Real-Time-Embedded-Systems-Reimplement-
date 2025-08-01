@@ -1,6 +1,8 @@
+import json
+
 from collections import defaultdict
 
-from codes.scheduler.core import Core
+from codes.offline_simulator.scheduler.core import Core
 
 class System:
     def __init__(self, DAG, k):
@@ -52,4 +54,28 @@ class System:
 
         return finish_times
     
+    def export_system_full_to_json(self, filename="system_scheduled.json"):
+        system_data = {
+            "DAG": self.DAG.to_dict(), 
+            "TSP_LO": self.TSP_LO,
+            "TSP_HI": self.TSP_HI,
+            "core_pairs": []
+        }
+
+        for i, (hi_core, lo_core) in enumerate(self.core_pairs):
+            core_pair_data = {
+                "pair_id": i + 1,
+                "HI_core": hi_core.core_to_dict(),
+                "LO_core": lo_core.core_to_dict()
+            }
+            system_data["core_pairs"].append(core_pair_data)
+
+        
+        with open(filename, "w") as f:
+            json.dump(system_data, f, indent=4)
+
+        print("✅ System Scheduled saved in file 'system_scheduled.json'")
+
+
+        
 

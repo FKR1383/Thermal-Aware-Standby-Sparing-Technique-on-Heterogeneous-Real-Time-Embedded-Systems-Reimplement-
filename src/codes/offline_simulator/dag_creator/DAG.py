@@ -1,7 +1,7 @@
 import random
 import json
 import math
-from codes.dag_creator.task import Task
+from codes.offline_simulator.dag_creator.task import Task
 import networkx as nx
 import matplotlib.pyplot as plt
 from matplotlib.patches import FancyArrowPatch
@@ -50,6 +50,7 @@ class DAG:
 
         task_names = random.choices(self.task_set, k=self.n)
 
+
         parts = [1] * self.h
         remaining = self.n - self.h
 
@@ -65,7 +66,7 @@ class DAG:
         task_id = 1
         for level in range(self.h):
             for i in range(len(self.levels[level])):
-                task = Task(task_id, task_names[task_id])
+                task = Task(task_id, task_names[task_id-1])
                 self.levels[level][i] = task
                 task.level = level
                 self.tasks.append(task)

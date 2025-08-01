@@ -1,10 +1,12 @@
 import sys
 
-from codes.dag_creator.DAG import DAG
-from codes.dag_creator.task import Task
-from codes.scheduler.system import System
-from codes.scheduler.core import Core
-from codes.scheduler.TASS import TASS_algorithm, plot_schedule
+from codes.offline_simulator.dag_creator.DAG import DAG
+from codes.offline_simulator.dag_creator.task import Task
+from codes.offline_simulator.scheduler.system import System
+from codes.offline_simulator.scheduler.core import Core
+from codes.offline_simulator.scheduler.TASS import TASS_algorithm, plot_schedule
+
+
 
 def run(task_dag_file, k):
     with open(task_dag_file, "r") as f:
@@ -29,6 +31,8 @@ def run(task_dag_file, k):
             print()
 
             plot_schedule(system=system)
+        
+        system.export_system_full_to_json()
     else:
         print("Tasks are unschedulable!")
 

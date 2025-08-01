@@ -1,0 +1,479 @@
+{
+    "DAG": {
+        "n": 9,
+        "parallelism_mode": "medium",
+        "h": 4,
+        "task_set": [
+            "Basicmath",
+            "Bitcount",
+            "CRC32",
+            "Dijkstra",
+            "FFT",
+            "Jpeg",
+            "Patricia",
+            "Qsort",
+            "SHA",
+            "String search",
+            "Susan"
+        ],
+        "tasks": [
+            {
+                "id": 1,
+                "task_name": "Patricia",
+                "level": 0,
+                "deadline": 35,
+                "wcet_LO": 9,
+                "wcet_HI": 4,
+                "peak_power_value_LO": 1,
+                "peak_power_value_HI": 2,
+                "parents": [],
+                "children": [
+                    3,
+                    4
+                ]
+            },
+            {
+                "id": 2,
+                "task_name": "Qsort",
+                "level": 0,
+                "deadline": 40,
+                "wcet_LO": 20,
+                "wcet_HI": 15,
+                "peak_power_value_LO": 2,
+                "peak_power_value_HI": 3,
+                "parents": [],
+                "children": [
+                    4,
+                    5
+                ]
+            },
+            {
+                "id": 3,
+                "task_name": "Bitcount",
+                "level": 1,
+                "deadline": 65,
+                "wcet_LO": 12,
+                "wcet_HI": 7,
+                "peak_power_value_LO": 1,
+                "peak_power_value_HI": 2,
+                "parents": [
+                    1,
+                    2
+                ],
+                "children": [
+                    8
+                ]
+            },
+            {
+                "id": 4,
+                "task_name": "SHA",
+                "level": 1,
+                "deadline": 60,
+                "wcet_LO": 15,
+                "wcet_HI": 10,
+                "peak_power_value_LO": 1,
+                "peak_power_value_HI": 2,
+                "parents": [
+                    1,
+                    2
+                ],
+                "children": [
+                    6
+                ]
+            },
+            {
+                "id": 5,
+                "task_name": "Bitcount",
+                "level": 1,
+                "deadline": 70,
+                "wcet_LO": 10,
+                "wcet_HI": 5,
+                "peak_power_value_LO": 3,
+                "peak_power_value_HI": 4,
+                "parents": [
+                    2
+                ],
+                "children": [
+                    6,
+                    7
+                ]
+            },
+            {
+                "id": 6,
+                "task_name": "Basicmath",
+                "level": 2,
+                "deadline": 121,
+                "wcet_LO": 26,
+                "wcet_HI": 21,
+                "peak_power_value_LO": 1,
+                "peak_power_value_HI": 2,
+                "parents": [
+                    4,
+                    5
+                ],
+                "children": [
+                    8
+                ]
+            },
+            {
+                "id": 7,
+                "task_name": "String search",
+                "level": 2,
+                "deadline": 100,
+                "wcet_LO": 13,
+                "wcet_HI": 8,
+                "peak_power_value_LO": 2,
+                "peak_power_value_HI": 3,
+                "parents": [
+                    5
+                ],
+                "children": [
+                    9
+                ]
+            },
+            {
+                "id": 8,
+                "task_name": "Bitcount",
+                "level": 3,
+                "deadline": 155,
+                "wcet_LO": 20,
+                "wcet_HI": 15,
+                "peak_power_value_LO": 1,
+                "peak_power_value_HI": 2,
+                "parents": [
+                    3,
+                    6
+                ],
+                "children": []
+            },
+            {
+                "id": 9,
+                "task_name": "FFT",
+                "level": 3,
+                "deadline": 130,
+                "wcet_LO": 11,
+                "wcet_HI": 6,
+                "peak_power_value_LO": 1,
+                "peak_power_value_HI": 2,
+                "parents": [
+                    7
+                ],
+                "children": []
+            }
+        ]
+    },
+    "TSP_LO": {
+        "0": null,
+        "1": 3,
+        "2": 1
+    },
+    "TSP_HI": {
+        "0": null,
+        "1": 5,
+        "2": 3
+    },
+    "core_pairs": [
+        {
+            "pair_id": 1,
+            "HI_core": {
+                "type": "HI",
+                "utilization": 48,
+                "voltage_frequency_values": [],
+                "scheduling": [
+                    {
+                        "task_id": 1,
+                        "task_name": "Patricia",
+                        "start": 0,
+                        "end": 4,
+                        "wcet": 4,
+                        "deadline": 35,
+                        "parents": [],
+                        "children": [
+                            3,
+                            4
+                        ],
+                        "level": 0
+                    },
+                    {
+                        "task_id": 4,
+                        "task_name": "SHA",
+                        "start": 35,
+                        "end": 45,
+                        "wcet": 10,
+                        "deadline": 60,
+                        "parents": [
+                            1,
+                            2
+                        ],
+                        "children": [
+                            6
+                        ],
+                        "level": 1
+                    },
+                    {
+                        "task_id": 5,
+                        "task_name": "Bitcount",
+                        "start": 45,
+                        "end": 50,
+                        "wcet": 5,
+                        "deadline": 70,
+                        "parents": [
+                            2
+                        ],
+                        "children": [
+                            6,
+                            7
+                        ],
+                        "level": 1
+                    },
+                    {
+                        "task_id": 7,
+                        "task_name": "String search",
+                        "start": 70,
+                        "end": 78,
+                        "wcet": 8,
+                        "deadline": 100,
+                        "parents": [
+                            5
+                        ],
+                        "children": [
+                            9
+                        ],
+                        "level": 2
+                    },
+                    {
+                        "task_id": 9,
+                        "task_name": "FFT",
+                        "start": 91,
+                        "end": 97,
+                        "wcet": 6,
+                        "deadline": 130,
+                        "parents": [
+                            7
+                        ],
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "task_id": 8,
+                        "task_name": "Bitcount",
+                        "start": 117,
+                        "end": 132,
+                        "wcet": 15,
+                        "deadline": 155,
+                        "parents": [
+                            3,
+                            6
+                        ],
+                        "children": [],
+                        "level": 3
+                    }
+                ]
+            },
+            "LO_core": {
+                "type": "LO",
+                "utilization": 78,
+                "voltage_frequency_values": [],
+                "scheduling": [
+                    {
+                        "task_id": 1,
+                        "task_name": "Patricia",
+                        "start": 4,
+                        "end": 13,
+                        "wcet": 9,
+                        "deadline": 35,
+                        "parents": [],
+                        "children": [
+                            3,
+                            4
+                        ],
+                        "level": 0
+                    },
+                    {
+                        "task_id": 4,
+                        "task_name": "SHA",
+                        "start": 45,
+                        "end": 60,
+                        "wcet": 15,
+                        "deadline": 60,
+                        "parents": [
+                            1,
+                            2
+                        ],
+                        "children": [
+                            6
+                        ],
+                        "level": 1
+                    },
+                    {
+                        "task_id": 5,
+                        "task_name": "Bitcount",
+                        "start": 60,
+                        "end": 70,
+                        "wcet": 10,
+                        "deadline": 70,
+                        "parents": [
+                            2
+                        ],
+                        "children": [
+                            6,
+                            7
+                        ],
+                        "level": 1
+                    },
+                    {
+                        "task_id": 7,
+                        "task_name": "String search",
+                        "start": 78,
+                        "end": 91,
+                        "wcet": 13,
+                        "deadline": 100,
+                        "parents": [
+                            5
+                        ],
+                        "children": [
+                            9
+                        ],
+                        "level": 2
+                    },
+                    {
+                        "task_id": 9,
+                        "task_name": "FFT",
+                        "start": 97,
+                        "end": 108,
+                        "wcet": 11,
+                        "deadline": 130,
+                        "parents": [
+                            7
+                        ],
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "task_id": 8,
+                        "task_name": "Bitcount",
+                        "start": 132,
+                        "end": 152,
+                        "wcet": 20,
+                        "deadline": 155,
+                        "parents": [
+                            3,
+                            6
+                        ],
+                        "children": [],
+                        "level": 3
+                    }
+                ]
+            }
+        },
+        {
+            "pair_id": 2,
+            "HI_core": {
+                "type": "HI",
+                "utilization": 43,
+                "voltage_frequency_values": [],
+                "scheduling": [
+                    {
+                        "task_id": 2,
+                        "task_name": "Qsort",
+                        "start": 0,
+                        "end": 15,
+                        "wcet": 15,
+                        "deadline": 40,
+                        "parents": [],
+                        "children": [
+                            4,
+                            5
+                        ],
+                        "level": 0
+                    },
+                    {
+                        "task_id": 3,
+                        "task_name": "Bitcount",
+                        "start": 35,
+                        "end": 42,
+                        "wcet": 7,
+                        "deadline": 65,
+                        "parents": [
+                            1,
+                            2
+                        ],
+                        "children": [
+                            8
+                        ],
+                        "level": 1
+                    },
+                    {
+                        "task_id": 6,
+                        "task_name": "Basicmath",
+                        "start": 70,
+                        "end": 91,
+                        "wcet": 21,
+                        "deadline": 121,
+                        "parents": [
+                            4,
+                            5
+                        ],
+                        "children": [
+                            8
+                        ],
+                        "level": 2
+                    }
+                ]
+            },
+            "LO_core": {
+                "type": "LO",
+                "utilization": 58,
+                "voltage_frequency_values": [],
+                "scheduling": [
+                    {
+                        "task_id": 2,
+                        "task_name": "Qsort",
+                        "start": 15,
+                        "end": 35,
+                        "wcet": 20,
+                        "deadline": 40,
+                        "parents": [],
+                        "children": [
+                            4,
+                            5
+                        ],
+                        "level": 0
+                    },
+                    {
+                        "task_id": 3,
+                        "task_name": "Bitcount",
+                        "start": 42,
+                        "end": 54,
+                        "wcet": 12,
+                        "deadline": 65,
+                        "parents": [
+                            1,
+                            2
+                        ],
+                        "children": [
+                            8
+                        ],
+                        "level": 1
+                    },
+                    {
+                        "task_id": 6,
+                        "task_name": "Basicmath",
+                        "start": 91,
+                        "end": 117,
+                        "wcet": 26,
+                        "deadline": 121,
+                        "parents": [
+                            4,
+                            5
+                        ],
+                        "children": [
+                            8
+                        ],
+                        "level": 2
+                    }
+                ]
+            }
+        }
+    ]
+}

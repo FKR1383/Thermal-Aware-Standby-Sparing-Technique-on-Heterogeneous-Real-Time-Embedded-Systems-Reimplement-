@@ -16,7 +16,7 @@
     <param name="homogeneous_ccs" value="1"/>
     <param name="homogeneous_NoCs" value="0"/>
     <param name="core_tech_node" value="28"/>
-    <param name="target_core_clockrate" value="2000"/>
+    <param name="target_core_clockrate" value="1400"/>
     <param name="temperature" value="340"/>
     <param name="interconnect_projection_type" value="1"/>
     <param name="device_type" value="2"/>
@@ -31,13 +31,13 @@
     <stat name="idle_cycles" value="80504"/>
     <stat name="busy_cycles" value="0"/>
     <component id="system.core0" name="core0">
-      <param name="clock_rate" value="2000"/>
+      <param name="clock_rate" value="1400"/>
       <param name="opt_local" value="0"/>
       <param name="instruction_length" value="32"/>
       <param name="opcode_width" value="7"/>
       <param name="x86" value="0"/>
       <param name="micro_opcode_width" value="8"/>
-      <param name="machine_type" value="0"/>
+      <param name="machine_type" value="1"/>
       <param name="number_hardware_threads" value="1"/>
       <param name="fetch_width" value="2"/>
       <param name="number_instruction_fetch_ports" value="1"/>
@@ -49,9 +49,9 @@
       <param name="prediction_width" value="1"/>
       <param name="pipelines_per_core" value="1,1"/>
       <param name="pipeline_depth" value="8,8"/>
-      <param name="ALU_per_core" value="2"/>
+      <param name="ALU_per_core" value="1"/>
       <param name="MUL_per_core" value="1"/>
-      <param name="FPU_per_core" value="2"/>
+      <param name="FPU_per_core" value="1"/>
       <param name="instruction_buffer_size" value="32"/>
       <param name="decoded_stream_buffer_size" value="16"/>
       <param name="instruction_window_scheme" value="0"/>

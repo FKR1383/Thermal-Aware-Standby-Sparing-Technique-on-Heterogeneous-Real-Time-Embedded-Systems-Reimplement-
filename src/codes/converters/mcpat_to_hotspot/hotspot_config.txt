@@ -1,0 +1,93 @@
+# HotSpot configuration file
+
+# thermal model parameters
+
+# chip specs
+-t_chip 0.00015000
+-k_chip 130.0
+-p_chip 1630300
+
+# heat sink specs
+-c_convec 140.4
+-r_convec 0.1
+-s_sink 0.06
+-t_sink 0.0069
+-k_sink 400.0
+-p_sink 3.55e6
+
+# heat spreader specs
+-s_spreader 0.03
+-t_spreader 0.001
+-k_spreader 400.0
+-p_spreader 3.55e6
+
+# interface material specs
+-t_interface 2.0e-05
+-k_interface 4.0
+-p_interface 4.0e6
+
+# secondary path
+-model_secondary 0
+-r_convec_sec 50.0
+-c_convec_sec 40.0
+-n_metal 8
+-t_metal 100.0e-6
+-t_c4 0.0001
+-s_c4 20.0e-6
+-n_c4 400
+-s_sub 0.021
+-t_sub 0.001
+-s_solder 0.021
+-t_solder 0.00094
+-s_pcb 0.1
+-t_pcb 0.002
+
+# others
+-ambient 340.0
+-init_file (null)
+-init_temp 340.0
+-steady_file (null)
+-sampling_intvl 0.01
+-base_proc_freq 1400000000.0
+-dtm_used 0
+-model_type block
+-leakage_used 0
+-leakage_mode 0
+-package_model_used 0
+-package_config_file package.config
+
+# block model specific parameters
+-block_omit_lateral 0
+
+# grid model specific parameters
+-grid_rows 39
+-grid_cols 39
+-grid_layer_file (null)
+-grid_steady_file (null)
+-grid_map_mode avg
+
+# microfluidic cooling parameters
+-use_microfluidic_cooling 0
+-pumping_pressure 52000
+-pump_internal_res 0
+-inlet_temperature 298.15
+-coolant_material water
+-wall_material silicon
+-htc 27132
+
+# floorplanner parameters
+-wrap_l2 1
+-l2_label L2
+-model_rim 0
+-rim_thickness 5e-05
+-compact_ratio 0.005
+-n_orients 300
+-P0 0.99
+-Davg 1
+-Kmoves 7
+-Rcool 0.99
+-Rreject 0.99
+-Nmax 1000
+-lambdaA 5.0e+06
+-lambdaT 1
+-lambdaW 350
