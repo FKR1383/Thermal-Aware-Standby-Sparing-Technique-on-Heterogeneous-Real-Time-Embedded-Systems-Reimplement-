@@ -1,4 +1,4 @@
-# Embedded Systems Project: Thermal-Aware Standby-Sparing on Heterogeneous Real-Time Embedded Systems
+# Low Power Design Project: Thermal-Aware Standby-Sparing on Heterogeneous Real-Time Embedded Systems
 
 ## Overview
 This project implements the **Thermal-Aware Standby-Sparing (TASS)** technique on heterogeneous real-time embedded systems. The approach focuses on improving **fault tolerance** and **thermal safety** while minimizing overall power consumption. Using a combination of **big (high-performance)** and **LITTLE (low-power)** cores, tasks are scheduled with both primary and spare execution to ensure deadline satisfaction under thermal and reliability constraints.
