@@ -3,6 +3,9 @@
 ## Overview
 This project implements the **Thermal-Aware Standby-Sparing (TASS)** technique on heterogeneous real-time embedded systems. The approach focuses on improving **fault tolerance** and **thermal safety** while minimizing overall power consumption. Using a combination of **big (high-performance)** and **LITTLE (low-power)** cores, tasks are scheduled with both primary and spare execution to ensure deadline satisfaction under thermal and reliability constraints.
 
+<img width="1600" height="1300" alt="schedule_output" src="https://github.com/user-attachments/assets/7636675b-fd2f-4f8d-a2c0-29564db4822a" caption="TASS offline scheduling"/>
+
+
 ## Key Features
 - **Standby-Sparing Scheduling**: Primary tasks execute on high-performance cores, while spare tasks are mapped to low-power cores to ensure reliability.
 - **Thermal-Aware Design (TSP)**: Applies the Thermal Safe Power (TSP) constraint to limit the maximum peak power per cluster of cores.
